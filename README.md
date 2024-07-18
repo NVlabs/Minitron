@@ -22,8 +22,7 @@ Deriving the Minitron 8B and 4B models from the base 15B model using our approac
 Minitron models are for research and development only.
 
 ## Demonstration of Various Pruning Strategies
-<p align="center">
-<table>
+<table align="center">
   <tr>
     <th>DEP</th>
     <th>MLP</th>
@@ -70,9 +69,11 @@ Minitron models are for research and development only.
     <td>3.953</td>
   </tr>
 </table>
+
+<p align="center">
+**Table 1: Demonstration of how various pruning strategies perform before and after lightweight retraining using ~1.8B tokens. We prune the Nemotron-4 15B model down to the size of Nemotron-3 8B and report the change in distillation loss (KL divergence on logits) and the final LM validation loss with retraining. We see that width (attention, MLP, embedding) pruning outperforms depth, but only after retraining. The last row shows change in loss for the Nemotron-3 8B model.**
 </p>
 
-**Table 1: Demonstration of how various pruning strategies perform before and after lightweight retraining using ~1.8B tokens. We prune the Nemotron-4 15B model down to the size of Nemotron-3 8B and report the change in distillation loss (KL divergence on logits) and the final LM validation loss with retraining. We see that width (attention, MLP, embedding) pruning outperforms depth, but only after retraining. The last row shows change in loss for the Nemotron-3 8B model.**
 ## Model Card
 Please see [MODEL_CARD.md](MODEL_CARD.md).
 
