@@ -4,7 +4,7 @@
 <img src="https://www.sauravm.com/assets/img/minitron.png"  width="256">
 </p>
 <p align="center">
-        🤗 <a href="">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="">Demo</a>
+        🤗 <a href="https://huggingface.co/nvidia">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="">Demo</a>
 </p>
 
 
@@ -15,13 +15,13 @@
   <p align="center"><strong>Figure 1: Results for Minitron. Compression results in significant reduction of training costs for additional models(40x) while producing better results.</strong></p>
 </p>
 
-Minitron is a family of small language models (SLMs) obtained by pruning NVIDIA's [Nemotron-4 15B]() model. We prune model embedding size, attention heads, and MLP intermediate dimension, following which, we perform continued training with distillation to arrive at the final models.
+Minitron is a family of small language models (SLMs) obtained by pruning NVIDIA's [Nemotron-4 15B](https://arxiv.org/abs/2402.16819) model. We prune model embedding size, attention heads, and MLP intermediate dimension, following which, we perform continued training with distillation to arrive at the final models.
 
 Deriving the Minitron 8B and 4B models from the base 15B model using our approach requires up to **40x fewer training tokens** per model compared to training from scratch; this results in **compute cost savings of 1.8x** for training the full model family (15B, 8B, and 4B). Minitron models exhibit up to a 16% improvement in MMLU scores compared to training from scratch, perform comparably to other community models such as Mistral 7B, Gemma 7B and Llama-3 8B, and outperform state-of-the-art compression techniques from the literature. Please refer to our [arXiv paper]() for more details.
 
 Minitron models are for research and development only.
 
-## Demonstration of Various Pruning Strategies
+### Demonstration of Various Pruning Strategies
 <table align="center">
   <tr>
     <th>DEP</th>
