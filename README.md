@@ -11,7 +11,7 @@
 ## Introduction
 
 <div style="text-align: center;">
-  <img src="images/minitron.pdf" alt="Sample Image" width="300"/>
+  <img src="images/minitron.png" alt="Sample Image" width="300"/>
   <p>Figure 1: Results for Minitron. Compression results in significant reduction of training costs for additional models(40x) while producing better results.</p>
 </div>
 
