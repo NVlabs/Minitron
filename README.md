@@ -22,19 +22,67 @@ Deriving the Minitron 8B and 4B models from the base 15B model using our approac
 Minitron models are for research and development only.
 
 ## Demonstration of Various Pruning Strategies
+<p  align="center">
 
-| DEP | MLP | ATT | EMB | Distillation Loss | LM Val Loss |
-|-----|-----|-----|-----|-------------------|-------------|
-| ✔️  | ✔️  | ✔️  | ✔️  | 5.35 → 0.38       | 2.062       |
-| ❌  | ✔️  | ✔️  | ✔️  | **6.33 → 0.37**   | **2.049**   |
-| ❌  | ✔️  | ✔️  | ❌  | 5.07 → 0.42       | 2.101       |
-| ✔️  | ❌  | ❌  | ❌  | 8.35 → 0.49       | 2.155       |
-
-||Distillation Loss|LM Val Loss|
-|-|-|-|
-| **Train from scratch (random init)** | 12.27 → 2.34 | 3.953 |
-
-**Table 1: Demonstration of how various pruning strategies perform before and after lightweight retraining using ~1.8B tokens. We prune the Nemotron-4 15B model down to the size of Nemotron-3 8B and report the change in distillation loss (KL divergence on logits) and the final LM validation loss with retraining. We see that width (attention, MLP, embedding) pruning outperforms depth, but only after retraining. The last row shows change in loss for the Nemotron-3 8B model.**
+<table>
+  <thead>
+    <tr>
+      <th>DEP</th>
+      <th>MLP</th>
+      <th>ATT</th>
+      <th>EMB</th>
+      <th>Distillation Loss</th>
+      <th>LM Val Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>5.35 → 0.38</td>
+      <td>2.062</td>
+    </tr>
+    <tr>
+      <td>❌</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td><strong>6.33 → 0.37</strong></td>
+      <td><strong>2.049</strong></td>
+    </tr>
+    <tr>
+      <td>❌</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>❌</td>
+      <td>5.07 → 0.42</td>
+      <td>2.101</td>
+    </tr>
+    <tr>
+      <td>✔️</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>8.35 → 0.49</td>
+      <td>2.155</td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Train from scratch (random init)</strong></td>
+      <td>12.27 → 2.34</td>
+      <td>3.953</td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p  align="center">
+*Table 1: Demonstration of how various pruning strategies perform before and after lightweight retraining using ~1.8B tokens. We prune the Nemotron-4 15B model down to the size of Nemotron-3 8B and report the change in distillation loss (KL divergence on logits) and the final LM validation loss with retraining. We see that width (attention, MLP, embedding) pruning outperforms depth, but only after retraining. The last row shows change in loss for the Nemotron-3 8B model.*
+</p>
 
 ## Model Card
 Please see [MODEL_CARD.md](MODEL_CARD.md).
