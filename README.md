@@ -1,7 +1,7 @@
 # Minitron
 
 <p align="center">
-<img src="https://www.sauravm.com/assets/img/minitron.png"  width="384">
+<img src="https://www.sauravm.com/assets/img/minitron.png"  width="256">
 </p>
 <p align="center">
         🤗 <a href="">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="">Demo</a>
