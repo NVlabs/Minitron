@@ -29,14 +29,20 @@ Minitron models are for research and development only.
 | ❌  | ✔️  | ✔️  | ✔️  | **6.33 → 0.37**   | **2.049**   |
 | ❌  | ✔️  | ✔️  | ❌  | 5.07 → 0.42       | 2.101       |
 | ✔️  | ❌  | ❌  | ❌  | 8.35 → 0.49       | 2.155       |
-| <div colspan="4">Train from scratch (random init)</div> | 12.27 → 2.34 | 3.953       |
 
+||Distillation Loss|LM Val Loss|
+|-|-|-|
+| **Train from scratch (random init)** | 12.27 → 2.34 | 3.953 |
 *Table 1: Demonstration of how various pruning strategies perform before and after lightweight retraining using ~1.8B tokens. We prune the Nemotron-4 15B model down to the size of Nemotron-3 8B and report the change in distillation loss (KL divergence on logits) and the final LM validation loss with retraining. We see that width (attention, MLP, embedding) pruning outperforms depth, but only after retraining. The last row shows change in loss for the Nemotron-3 8B model.*
-
-## Quickstart
 
 ## Model Card
 Please see [MODEL_CARD.md](MODEL_CARD.md).
+
+## Quickstart
+
+### HuggingFace
+
+### TRT-LLM
 
 ## License
 
