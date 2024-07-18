@@ -12,7 +12,7 @@
 
 <div style="text-align: center;">
   <img src="images/minitron.png" alt="Sample Image" width="300"/>
-  <p>Figure 1: Results for Minitron. Compression results in significant reduction of training costs for additional models(40x) while producing better results.</p>
+  <p><em>Figure 1: Results for Minitron. Compression results in significant reduction of training costs for additional models(40x) while producing better results.</em></p>
 </div>
 
 Minitron is a family of small language models (SLMs) obtained by pruning NVIDIA's [Nemotron-4 15B]() model. We prune model embedding size, attention heads, and MLP intermediate dimension, following which, we perform continued training with distillation to arrive at the final models.
