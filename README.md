@@ -11,8 +11,8 @@
 ## Introduction
 
 <div style="text-align: center;">
-  <img src="images/minitron.png" alt="Sample Image" width="300"/>
-  <p><em>Figure 1: Results for Minitron. Compression results in significant reduction of training costs for additional models(40x) while producing better results.</em></p>
+  <img src="images/minitron.png" alt="Sample Image" width="600"/>
+  <p><strong>Figure 1: Results for Minitron. Compression results in significant reduction of training costs for additional models(40x) while producing better results.</strong></p>
 </div>
 
 Minitron is a family of small language models (SLMs) obtained by pruning NVIDIA's [Nemotron-4 15B]() model. We prune model embedding size, attention heads, and MLP intermediate dimension, following which, we perform continued training with distillation to arrive at the final models.
@@ -34,7 +34,7 @@ Minitron models are for research and development only.
 |-|-|-|
 | **Train from scratch (random init)** | 12.27 → 2.34 | 3.953 |
 
-*Table 1: Demonstration of how various pruning strategies perform before and after lightweight retraining using ~1.8B tokens. We prune the Nemotron-4 15B model down to the size of Nemotron-3 8B and report the change in distillation loss (KL divergence on logits) and the final LM validation loss with retraining. We see that width (attention, MLP, embedding) pruning outperforms depth, but only after retraining. The last row shows change in loss for the Nemotron-3 8B model.*
+**Table 1: Demonstration of how various pruning strategies perform before and after lightweight retraining using ~1.8B tokens. We prune the Nemotron-4 15B model down to the size of Nemotron-3 8B and report the change in distillation loss (KL divergence on logits) and the final LM validation loss with retraining. We see that width (attention, MLP, embedding) pruning outperforms depth, but only after retraining. The last row shows change in loss for the Nemotron-3 8B model.**
 
 ## Model Card
 Please see [MODEL_CARD.md](MODEL_CARD.md).
