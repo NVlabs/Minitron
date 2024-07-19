@@ -54,6 +54,62 @@ print(output_text)
 
 ### TRT-LLM
 
+The following steps provide an example of how to load the Minitron-8B model with `.nemo` checkpoint format.
+
+1. Export TensorRT-LLM checkpoint
+
+    Fist launch the NeMo container `nvcr.io/nvidia/nemo:24.05` with the `.nemo` model checkpoint and `TensorRT-Model-Optimizer` folder mounted.
+
+    ```
+    git clone https://github.com/NVIDIA/TensorRT-Model-Optimizer.git
+    docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 --init -it -v <TensorRT-Model-Optimizer_directory>:/workspace/TensorRT-Model-Optimizer -v <minitron_model_directory>:/workspace/minitron --rm nvcr.io/nvidia/nemo:24.05 bash
+    ```
+
+    Inside the docker, run the following commands to export TensorRT-LLM checkpoint.
+    ```
+    export GPT_MODEL_FILE=<minitron_nemo_file_directory>
+    pip install "nvidia-modelopt[torch]" -U
+    cd llm_ptq/
+    scripts/nemo_example.sh --type gptnext --model $GPT_MODEL_FILE --quant bf16 --tp 1
+    ```
+
+2. Export TensorRT engine
+
+    Use docker to build and run TensorRT-LLM following this [instructions](https://nvidia.github.io/TensorRT-LLM/installation/build-from-source-linux.html).
+    
+    ```
+    # TensorRT-LLM uses git-lfs, which needs to be installed in advance.
+    apt-get update && apt-get -y install git git-lfs
+    git lfs install
+
+    git clone https://github.com/NVIDIA/TensorRT-LLM.git
+    cd TensorRT-LLM
+    git submodule update --init --recursive
+    git lfs pull
+    ```
+    
+    Now copy the exported TensorRT-LLM checkpoint to directory of TensorRT-LLM and launch the docker container
+    
+    ```
+    cp -r <TensorRT-LLM_checkpoint_directory> <TensorRT-LLM_directory>
+    cd <TensorRT-LLM_directory>
+    make -C docker release_build
+    ```
+
+    Inside the docker container, build TensorRT engine.
+
+    ```
+    trtllm-build --checkpoint_dir /code/tensorrt_llm/<TensorRT-LLM_directory> --gpt_attention_plugin bfloat16 --gemm_plugin bfloat16 --output_dir <trt_engine_directory>
+    ```
+
+    Run inference with the built TensorRT engine to summarize articles from the [cnn_dailymail](https://huggingface.co/datasets/abisee/cnn_dailymail) dataset.
+
+    ```
+    python3 example/summarize.py --test_trt_llm --no_add_special_tokens --engine_dir <trt_engine_directory> --vocab_file <TensorRT-LLM_checkpoint_directory>/tokenizer.model
+    ```
+
+
+
 ## License
 
 Minitron is released under the [NVIDIA Open Model License Agreement](https://developer.download.nvidia.com/licenses/nvidia-open-model-license-agreement-june-2024.pdf).
