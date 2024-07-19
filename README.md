@@ -115,6 +115,16 @@ The following steps provide an example of how to load the Minitron-8B model in t
 
 Minitron is released under the [NVIDIA Open Model License Agreement](https://developer.download.nvidia.com/licenses/nvidia-open-model-license-agreement-june-2024.pdf).
 
+
+## Acknowledgments
+
+We would like to thank Ameya Sunil Mahabaleshwarkar, Hayley Ross, Brandon Rowlett, Oluwatobi
+Olabiyi, Ao Tang, and Yoshi Suhara for help with producing the instruction-tuned versions of
+MINITRON; additionally, James Shen for TRT-LLM support, and Sanjeev Satheesh, Oleksii Kuchaiev,
+Shengyang Sun, Jiaqi Zeng, Zhilin Wang, Yi Dong, Zihan Liu, Rajarshi Roy, Wei Ping, and Makesh
+Narsimhan Sreedhar for help with datasets; Ao Tang for HF support. We’d also like to gratefully acknowledge the insightful
+discussion and feedback from Chenhan Yu and Daniel Korzekwa.
+
 ## Citation
 
 If you find our work helpful, please consider citing our paper:
