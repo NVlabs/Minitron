@@ -54,18 +54,18 @@ print(output_text)
 
 ### TRT-LLM
 
-The following steps provide an example of how to load the Minitron-8B model with `.nemo` checkpoint format.
+The following steps provide an example of how to load the Minitron-8B model in the `.nemo` checkpoint format.
 
 1. Export TensorRT-LLM checkpoint
 
-    Fist launch the NeMo container `nvcr.io/nvidia/nemo:24.05` with the `.nemo` model checkpoint and `TensorRT-Model-Optimizer` folder mounted.
+    First launch the NeMo container `nvcr.io/nvidia/nemo:24.05` with the `.nemo` model checkpoint and `TensorRT-Model-Optimizer` folder mounted.
 
     ```
     git clone https://github.com/NVIDIA/TensorRT-Model-Optimizer.git
     docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 --init -it -v <TensorRT-Model-Optimizer_directory>:/workspace/TensorRT-Model-Optimizer -v <minitron_model_directory>:/workspace/minitron --rm nvcr.io/nvidia/nemo:24.05 bash
     ```
 
-    Inside the docker, run the following commands to export TensorRT-LLM checkpoint.
+    Inside the container, run the following commands to export TensorRT-LLM checkpoint.
     ```
     export GPT_MODEL_FILE=<minitron_nemo_file_directory>
     pip install "nvidia-modelopt[torch]" -U
