@@ -31,19 +31,29 @@ Please see [MODEL_CARD.md](MODEL_CARD.md).
 ### Hugging Face
 
 The [PR](https://github.com/huggingface/transformers/pull/31699) to support our models in Hugging Face in under review and expected to be merged soon. This [branch](https://github.com/suiyoubi/transformers/tree/aot/nemotron-support) can be used meanwhile to use our Minitron models.
+
+```
+git clone git@github.com:suiyoubi/transformers.git
+cd transformers
+git checkout aot/nemotron-support
+```
 The following code provides an example of how to load the Minitron-8B model and use it to perform text generation.
 
 ```python
+import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Load the tokenizer and model
-model_path = "nvidia/minitron-8b-base"
+model_path = "nvidia/Minitron-8B-Base"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
-model = AutoModelForCausalLM.from_pretrained(model_path)
+
+device='cuda'
+dtype=torch.bfloat16
+model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=dtype, device_map=device)
 
 # Prepare the input text
 prompt = "To be or not to be,"
-input_ids = tokenizer.encode(prompt, return_tensors="pt")
+input_ids = tokenizer.encode(prompt, return_tensors="pt").to(model.device)
 
 # Generate the output
 output_ids = model.generate(input_ids, max_length=50, num_return_sequences=1)
