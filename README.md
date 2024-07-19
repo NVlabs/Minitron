@@ -28,8 +28,9 @@ Please see [MODEL_CARD.md](MODEL_CARD.md).
 
 ## Quickstart
 
-### HuggingFace
+### Hugging Face
 
+The [PR](https://github.com/huggingface/transformers/pull/31699) to support our models in Hugging Face in under review and expected to be merged soon. This [branch](https://github.com/suiyoubi/transformers/tree/aot/nemotron-support) can be used meanwhile to use our Minitron models.
 The following code provides an example of how to load the Minitron-8B model and use it to perform text generation.
 
 ```python
