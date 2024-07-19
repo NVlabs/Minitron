@@ -20,7 +20,7 @@ Minitron models are for research and development only.
 
 <p align="center">
   <img src="images/minitron.png" alt="Minitron accuracy" width="512"/>
-  <p align="center">Figure 1: Results for Minitron. Compression results in significant reduction of training costs for additional models(40x) while producing better results.</p>
+  <p align="center">Minitron accuracy (MMLU) vs. other baseline models. Compression results in significant reduction of training costs for additional models(40x) while producing better results. Please refer to our <a href="">paper</a> for the full set of results.</p>
 </p>
 
 ### Demonstration of Various Pruning Strategies
