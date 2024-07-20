@@ -69,7 +69,7 @@ The following steps provide an example of how to load the Minitron-8B model in t
 
 1. Export TensorRT-LLM checkpoint
 
-    First launch the NeMo container `nvcr.io/nvidia/nemo:24.05` with the `.nemo` model checkpoint and `TensorRT-Model-Optimizer` folder mounted.
+    First launch the NeMo container `nvcr.io/nvidia/nemo:24.05` with the `.nemo` model checkpoint and [TensorRT-Model-Optimizer](https://github.com/NVIDIA/TensorRT-Model-Optimizer) folder mounted.
 
     ```
     git clone https://github.com/NVIDIA/TensorRT-Model-Optimizer.git
@@ -80,13 +80,21 @@ The following steps provide an example of how to load the Minitron-8B model in t
     ```
     export GPT_MODEL_FILE=<minitron_nemo_file_directory>
     pip install "nvidia-modelopt[torch]" -U
-    cd llm_ptq/
-    scripts/nemo_example.sh --type gptnext --model $GPT_MODEL_FILE --quant bf16 --tp 1
+    cd TensorRT-Model-Optimizer/llm_ptq/
+    scripts/nemo_example.sh --type gptnext --model $GPT_MODEL_FILE --quant bf16 --tp 1 --task "build"
     ```
+
+    You will see something like
+
+    ```
+    Model config exported to: <TensorRT-LLM_checkpoint_directory>. Total time used ** s.
+    ```
+
+    which means the TensorRT-LLM checkpoint is exported successfully.
 
 2. Export TensorRT engine
 
-    Use docker to build and run TensorRT-LLM following this [instructions](https://nvidia.github.io/TensorRT-LLM/installation/build-from-source-linux.html).
+    Use docker to build and run [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) following this [instructions](https://nvidia.github.io/TensorRT-LLM/installation/build-from-source-linux.html).
     
     ```
     # TensorRT-LLM uses git-lfs, which needs to be installed in advance.
@@ -97,6 +105,7 @@ The following steps provide an example of how to load the Minitron-8B model in t
     cd TensorRT-LLM
     git submodule update --init --recursive
     git lfs pull
+    make -C docker release_build
     ```
     
     Now copy the exported TensorRT-LLM checkpoint to directory of TensorRT-LLM and launch the docker container
@@ -104,7 +113,7 @@ The following steps provide an example of how to load the Minitron-8B model in t
     ```
     cp -r <TensorRT-LLM_checkpoint_directory> <TensorRT-LLM_directory>
     cd <TensorRT-LLM_directory>
-    make -C docker release_build
+    make -C docker release_run
     ```
 
     Inside the docker container, build TensorRT engine.
