@@ -4,7 +4,7 @@
 <img src="https://www.sauravm.com/assets/img/minitron.png"  width="256">
 </p>
 <p align="center">
-        🤗 <a href="https://huggingface.co/nvidia">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="">Demo</a>
+        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="">Demo</a>
 </p>
 
 
