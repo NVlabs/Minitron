@@ -36,6 +36,7 @@ The [PR](https://github.com/huggingface/transformers/pull/31699) to support our 
 git clone git@github.com:suiyoubi/transformers.git
 cd transformers
 git checkout aot/nemotron-support
+pip install .
 ```
 The following code provides an example of how to load the Minitron-8B model and use it to perform text generation.
 
@@ -65,7 +66,7 @@ print(output_text)
 
 ### TRT-LLM
 
-The following steps provide an example of how to load the Minitron-8B model in the `.nemo` checkpoint format.
+The following steps provide an example of how to load the Minitron-8B model in the `.nemo` checkpoint format. You can download the corresponding `.nemo` checkpoints here: [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base/tree/main/nemo) and [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base/tree/main/nemo).
 
 1. Export TensorRT-LLM checkpoint.
 
