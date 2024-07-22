@@ -129,7 +129,39 @@ The following steps provide an example of how to load the Minitron-8B model in t
     python3 example/summarize.py --test_trt_llm --no_add_special_tokens --engine_dir <trt_engine_directory> --vocab_file <TensorRT-LLM_checkpoint_directory>/tokenizer.model
     ```
 
+### Fine-tuning with LMFlow
+[LMFlow](https://github.com/OptimalScale/LMFlow) is a complete pipeline for fine-tuning large language models. The following steps provide an example of how to fine-tune the ``Minitron-8B-Base`` models using LMFlow with the `alpaca` dataset.
 
+1. Install LMFlow
+
+    ```
+    git clone https://github.com/OptimalScale/LMFlow.git
+    cd LMFlow
+    bash install.sh
+    ```
+  
+2. Prepare the dataset
+  
+      Download the [alpaca](https://huggingface.co/datasets/wikitext) dataset and preprocess it using the following command.
+  
+      ```bash
+      cd data && ./download.sh alpaca && cd -
+      ```
+
+3. Fine-tune the model
+  
+      Fine-tune the Minitron-8B model on the Wikitext-103 dataset using the following command.
+    
+      ```bash
+      bash ./scripts/run_finetune.sh \
+        --model_name_or_path nvidia/Minitron-8B-Base \
+        --dataset_path data/alpaca/train_conversation \
+        --output_model_path output_models/finetuned_minitron
+      ```
+
+With LMFlow, you can also fine-tune the model on your custom dataset. The only thing you need to do is transform your dataset into the [LMFlow data format](https://optimalscale.github.io/LMFlow/examples/DATASETS.html).
+In addition to full-finetuniing, you can also fine-tune minitron efficiently with [LoRA](https://github.com/OptimalScale/LMFlow?tab=readme-ov-file#lora), [LISA](https://github.com/OptimalScale/LMFlow?tab=readme-ov-file#lisa), [Flash Attention](https://github.com/OptimalScale/LMFlow/blob/main/readme/flash_attn2.md), and other acceleration techniques.
+  
 
 ## License
 
