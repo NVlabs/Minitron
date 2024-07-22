@@ -35,7 +35,7 @@ The [PR](https://github.com/huggingface/transformers/pull/31699) to support our 
 ```
 git clone git@github.com:suiyoubi/transformers.git
 cd transformers
-git checkout aot/nemotron-support
+git checkout 63d9cb0
 pip install .
 ```
 The following code provides an example of how to load the Minitron-8B model and use it to perform text generation.
