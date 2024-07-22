@@ -110,7 +110,7 @@ The following steps provide an example of how to load the Minitron-8B model in t
     ```
 
 ### Fine-tuning with LMFlow
-[LMFlow](https://github.com/OptimalScale/LMFlow) is a complete pipeline for fine-tuning large language models. The following steps provide an example of how to fine-tune the ``minitron-8b-base`` models using LMFlow with `alpaca` dataset.
+[LMFlow](https://github.com/OptimalScale/LMFlow) is a complete pipeline for fine-tuning large language models. The following steps provide an example of how to fine-tune the ``Minitron-8B-Base`` models using LMFlow with the `alpaca` dataset.
 
 1. Install LMFlow
 
@@ -134,7 +134,7 @@ The following steps provide an example of how to load the Minitron-8B model in t
     
       ```bash
       bash ./scripts/run_finetune.sh \
-        --model_name_or_path nvidia/minitron-8b-base \
+        --model_name_or_path nvidia/Minitron-8B-Base \
         --dataset_path data/alpaca/train_conversation \
         --output_model_path output_models/finetuned_minitron
       ```
