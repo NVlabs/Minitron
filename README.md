@@ -4,7 +4,7 @@
 <img src="https://www.sauravm.com/assets/img/minitron.png"  width="256">
 </p>
 <p align="center">
-        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="">Demo</a>
+        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2407.14679">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="">Demo</a>
 </p>
 
 
@@ -12,7 +12,7 @@
 
 Minitron is a family of small language models (SLMs) obtained by pruning NVIDIA's [Nemotron-4 15B](https://arxiv.org/abs/2402.16819) model. We prune model embedding size, attention heads, and MLP intermediate dimension, following which, we perform continued training with distillation to arrive at the final models.
 
-Deriving the Minitron 8B and 4B models from the base 15B model using our approach requires up to **40x fewer training tokens** per model compared to training from scratch; this results in **compute cost savings of 1.8x** for training the full model family (15B, 8B, and 4B). Minitron models exhibit up to a 16% improvement in MMLU scores compared to training from scratch, perform comparably to other community models such as Mistral 7B, Gemma 7B and Llama-3 8B, and outperform state-of-the-art compression techniques from the literature. Please refer to our [arXiv paper]() for more details.
+Deriving the Minitron 8B and 4B models from the base 15B model using our approach requires up to **40x fewer training tokens** per model compared to training from scratch; this results in **compute cost savings of 1.8x** for training the full model family (15B, 8B, and 4B). Minitron models exhibit up to a 16% improvement in MMLU scores compared to training from scratch, perform comparably to other community models such as Mistral 7B, Gemma 7B and Llama-3 8B, and outperform state-of-the-art compression techniques from the literature. Please refer to our [arXiv paper](https://arxiv.org/abs/2407.14679) for more details.
 
 Minitron models are for research and development only.
 
@@ -20,7 +20,7 @@ Minitron models are for research and development only.
 
 <p align="center">
   <img src="images/minitron.png" alt="Minitron accuracy" width="512"/>
-  <p align="center">Minitron accuracy (MMLU) vs. other baseline models. Compression results in significant reduction of training costs for additional models(40x) while producing better results. Please refer to our <a href="">paper</a> for the full set of results.</p>
+  <p align="center">Minitron accuracy (MMLU) vs. other baseline models. Compression results in significant reduction of training costs for additional models(40x) while producing better results. Please refer to our <a href="https://arxiv.org/abs/2407.14679">paper</a> for the full set of results.</p>
 </p>
 
 ## Model Card
@@ -184,7 +184,8 @@ If you find our work helpful, please consider citing our paper:
 @article{minitron2024,
       title={Compact Language Models via Pruning and Knowledge Distillation}, 
       author={Saurav Muralidharan and Sharath Turuvekere Sreenivas and Raviraj Joshi and Marcin Chochowski and Mostofa Patwary and Mohammad Shoeybi and Bryan Catanzaro and Jan Kautz and Pavlo Molchanov},
-      journal={arXiv preprint arXiv:XXX},
-      year={2024}
+      journal={arXiv preprint arXiv:2407.14679},
+      year={2024},
+      url={https://arxiv.org/abs/2407.14679}, 
 }
 ```
