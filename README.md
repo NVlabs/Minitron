@@ -30,7 +30,7 @@ Please see [MODEL_CARD.md](MODEL_CARD.md).
 
 ### Hugging Face
 
-The [PR](https://github.com/huggingface/transformers/pull/31699) to support our models in Hugging Face in under review and expected to be merged soon. This [branch](https://github.com/suiyoubi/transformers/tree/aot/nemotron-support) can be used meanwhile to use our Minitron models.
+The [PR](https://github.com/huggingface/transformers/pull/31699) to support our models in Hugging Face in under review and expected to be merged soon. In the meantime, this [branch](https://github.com/suiyoubi/transformers/tree/aot/nemotron-support) at [commit ID 63d9cb0](https://github.com/suiyoubi/transformers/commit/63d9cb0afd2bf5d4cb5431ba1b2c4e353752a937) can be used for Minitron models:
 
 ```
 git clone git@github.com:suiyoubi/transformers.git
