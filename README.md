@@ -64,6 +64,8 @@ output_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
 print(output_text)
 ```
 
+**Quantized Versions:** The 🤗 Hugging Face community has already created FP8 quantized versions of Minitron models. Give them a try here: [Minitron-8B-Base-FP8](https://huggingface.co/mgoin/Minitron-8B-Base-FP8) and [Minitron-4B-Base-FP8](https://huggingface.co/mgoin/Minitron-4B-Base-FP8).
+
 ### TRT-LLM
 
 The following steps provide an example of how to load the Minitron-8B model in the `.nemo` checkpoint format. You can download the corresponding `.nemo` checkpoints here: [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base/tree/main/nemo) and [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base/tree/main/nemo).
