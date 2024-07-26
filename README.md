@@ -4,7 +4,7 @@
 <img src="https://www.sauravm.com/assets/img/minitron.png"  width="256">
 </p>
 <p align="center">
-        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2407.14679">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="https://huggingface.co/spaces/Tonic/Minitron">Demo (3rd Party)</a>
+        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2407.14679">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="https://huggingface.co/spaces/nvidia/minitron">Demo</a>
 </p>
 
 
