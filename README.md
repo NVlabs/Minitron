@@ -4,17 +4,16 @@
 <img src="https://www.sauravm.com/assets/img/minitron.png"  width="256">
 </p>
 <p align="center">
-        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2407.14679">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="">Blog</a> &nbsp | &nbsp 💬 <a href="https://huggingface.co/spaces/nvidia/minitron">Demo</a>
+        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2407.14679">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-a-4b-model-with-llama-minitron/">Blog</a> &nbsp | &nbsp 💬 <a href="https://huggingface.co/spaces/nvidia/minitron">Demo</a>
 </p>
-
 
 ## Introduction
 
-Minitron is a family of small language models (SLMs) obtained by pruning NVIDIA's [Nemotron-4 15B](https://arxiv.org/abs/2402.16819) model. We prune model embedding size, attention heads, and MLP intermediate dimension, following which, we perform continued training with distillation to arrive at the final models.
+Minitron is a family of small language models (SLMs) obtained via pruning and knowledge distillation. We prune model embedding size, attention heads, and MLP intermediate dimension, following which, we perform continued training with distillation to arrive at the final models.
 
-Deriving the Minitron 8B and 4B models from the base 15B model using our approach requires up to **40x fewer training tokens** per model compared to training from scratch; this results in **compute cost savings of 1.8x** for training the full model family (15B, 8B, and 4B). Minitron models exhibit up to a 16% improvement in MMLU scores compared to training from scratch, perform comparably to other community models such as Mistral 7B, Gemma 7B and Llama-3 8B, and outperform state-of-the-art compression techniques from the literature. Please refer to our [arXiv paper](https://arxiv.org/abs/2407.14679) for more details.
+## News
 
-Minitron models are for research and development only.
+1. New blog post on Llama-3.1 models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-a-4b-model-with-llama-minitron).
 
 ## Minitron Model Performance
 
@@ -23,52 +22,28 @@ Minitron models are for research and development only.
   <p align="center">Minitron accuracy (MMLU) vs. other baseline models. Compression results in significant reduction of training costs for additional models(40x) while producing better results. Please refer to our <a href="https://arxiv.org/abs/2407.14679">paper</a> for the full set of results.</p>
 </p>
 
-## Model Card
-Please see [MODEL_CARD.md](MODEL_CARD.md).
+Deriving the Nemotron-4-Minitron 8B and 4B models from the base 15B model using our approach requires up to **40x fewer training tokens** per model compared to training from scratch; this results in **compute cost savings of 1.8x** for training the full model family (15B, 8B, and 4B). Nemotron-4-Minitron models exhibit up to a 16% improvement in MMLU scores compared to training from scratch, perform comparably to other community models such as Mistral 7B, Gemma 7B and Llama-3 8B, and outperform state-of-the-art compression techniques from the literature. Please refer to our [arXiv paper](https://arxiv.org/abs/2407.14679) for more details.
 
-## Quickstart
+## Hugging Face Checkpoints, Model Cards and Usage
+
+Please see:
+
+1. [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base).
+2. [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base).
+3. [Nemotron-4-Minitron-8B-Base](https://huggingface.co/nvidia/Nemotron-4-Minitron-8B-Base).
+4. [Nemotron-4-Minitron-4B-Base](https://huggingface.co/nvidia/Nemotron-4-Minitron-4B-Base).
+
+## Usage
 
 ### Hugging Face
 
-The [PR](https://github.com/huggingface/transformers/pull/31699) to support our models in Hugging Face in under review and expected to be merged soon. In the meantime, this [branch](https://github.com/suiyoubi/transformers/tree/aot/nemotron-support) at [commit ID 63d9cb0](https://github.com/suiyoubi/transformers/commit/63d9cb0afd2bf5d4cb5431ba1b2c4e353752a937) can be used for Minitron models:
+Please refer to the instructions in the respective model cards above.
 
-```
-git clone git@github.com:suiyoubi/transformers.git
-cd transformers
-git checkout 63d9cb0
-pip install .
-```
-The following code provides an example of how to load the Minitron-8B model and use it to perform text generation.
-
-```python
-import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
-
-# Load the tokenizer and model
-model_path = "nvidia/Minitron-8B-Base"
-tokenizer = AutoTokenizer.from_pretrained(model_path)
-
-device='cuda'
-dtype=torch.bfloat16
-model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=dtype, device_map=device)
-
-# Prepare the input text
-prompt = "To be or not to be,"
-input_ids = tokenizer.encode(prompt, return_tensors="pt").to(model.device)
-
-# Generate the output
-output_ids = model.generate(input_ids, max_length=50, num_return_sequences=1)
-
-# Decode and print the output
-output_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
-print(output_text)
-```
-
-**Quantized Versions:** The 🤗 Hugging Face community has already created FP8 quantized versions of Minitron models. Give them a try here: [Minitron-8B-Base-FP8](https://huggingface.co/mgoin/Minitron-8B-Base-FP8) and [Minitron-4B-Base-FP8](https://huggingface.co/mgoin/Minitron-4B-Base-FP8).
+**Quantized Versions:** The 🤗 Hugging Face community has already created FP8 quantized versions of Nemotron-4-Minitron models. Give them a try here: [Nemotron-4-Minitron-8B-Base-FP8](https://huggingface.co/mgoin/Minitron-8B-Base-FP8) and [Nemotron-4-Minitron-4B-Base-FP8](https://huggingface.co/mgoin/Minitron-4B-Base-FP8).
 
 ### TRT-LLM
 
-The following steps provide an example of how to load the Minitron-8B model in the `.nemo` checkpoint format. You can download the corresponding `.nemo` checkpoints here: [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base/tree/main/nemo) and [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base/tree/main/nemo).
+The following steps provide an example of how to load the Nemotron-4-Minitron-8B model in the `.nemo` checkpoint format. You can download the corresponding `.nemo` checkpoints here: [Nemotron-4-Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base/tree/main/nemo) and [Nemotron-4-Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base/tree/main/nemo).
 
 1. Export TensorRT-LLM checkpoint.
 
@@ -132,7 +107,7 @@ The following steps provide an example of how to load the Minitron-8B model in t
     ```
 
 ### Fine-tuning with LMFlow
-[LMFlow](https://github.com/OptimalScale/LMFlow) is a complete pipeline for fine-tuning large language models. The following steps provide an example of how to fine-tune the ``Minitron-8B-Base`` models using LMFlow with the `alpaca` dataset.
+[LMFlow](https://github.com/OptimalScale/LMFlow) is a complete pipeline for fine-tuning large language models. The following steps provide an example of how to fine-tune the ``Nemotron-4-Minitron-8B-Base`` models using LMFlow with the `alpaca` dataset.
 
 1. Install LMFlow
 
@@ -152,11 +127,11 @@ The following steps provide an example of how to load the Minitron-8B model in t
 
 3. Fine-tune the model
   
-      Fine-tune the Minitron-8B model on the Wikitext-103 dataset using the following command.
+      Fine-tune the Nemotron-4-Minitron-8B model on the Wikitext-103 dataset using the following command.
     
       ```bash
       bash ./scripts/run_finetune.sh \
-        --model_name_or_path nvidia/Minitron-8B-Base \
+        --model_name_or_path nvidia/Nemotron-4-Minitron-8B-Base \
         --dataset_path data/alpaca/train_conversation \
         --output_model_path output_models/finetuned_minitron
       ```
@@ -167,7 +142,7 @@ In addition to full-finetuniing, you can also fine-tune minitron efficiently wit
 
 ## License
 
-Minitron is released under the [NVIDIA Open Model License Agreement](https://developer.download.nvidia.com/licenses/nvidia-open-model-license-agreement-june-2024.pdf).
+Minitron models are released under the [NVIDIA Open Model License Agreement](https://developer.download.nvidia.com/licenses/nvidia-open-model-license-agreement-june-2024.pdf).
 
 
 ## Acknowledgments
