@@ -4,7 +4,7 @@
 <img src="https://www.sauravm.com/assets/img/minitron.png"  width="256">
 </p>
 <p align="center">
-        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2407.14679">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-a-4b-model-with-llama-minitron/">Blog</a> &nbsp | &nbsp 💬 <a href="https://huggingface.co/spaces/nvidia/minitron">Demo</a>
+        🤗 <a href="https://huggingface.co/collections/nvidia/minitron-669ac727dc9c86e6ab7f0f3e">Hugging Face Models</a>&nbsp&nbsp | &nbsp&nbsp 📄 <a href="https://arxiv.org/abs/2407.14679">Paper</a> &nbsp&nbsp | &nbsp&nbsp 📜 <a href="https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/">Blog</a> &nbsp | &nbsp 💬 <a href="https://huggingface.co/spaces/nvidia/minitron">Demo</a>
 </p>
 
 ## Introduction
@@ -13,7 +13,7 @@ Minitron is a family of small language models (SLMs) obtained via pruning and kn
 
 ## News
 
-1. New blog post on Llama-3.1 models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-a-4b-model-with-llama-minitron).
+1. New blog post on Llama-3.1 models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/).
 
 ## Minitron Model Performance
 
