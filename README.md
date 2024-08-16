@@ -22,7 +22,7 @@ Minitron is a family of small language models (SLMs) obtained via pruning and kn
   <p align="center">Minitron accuracy (MMLU) vs. other baseline models. Compression results in significant reduction of training costs for additional models(40x) while producing better results. Please refer to our <a href="https://arxiv.org/abs/2407.14679">paper</a> for the full set of results.</p>
 </p>
 
-Deriving the Nemotron-4-Minitron 8B and 4B models from the base 15B model using our approach requires up to **40x fewer training tokens** per model compared to training from scratch; this results in **compute cost savings of 1.8x** for training the full model family (15B, 8B, and 4B). Nemotron-4-Minitron models exhibit up to a 16% improvement in MMLU scores compared to training from scratch, perform comparably to other community models such as Mistral 7B, Gemma 7B and Llama-3 8B, and outperform state-of-the-art compression techniques from the literature. Please refer to our [arXiv paper](https://arxiv.org/abs/2407.14679) for more details.
+Deriving the Minitron 8B and 4B models from the base Nemotron-4 15B model using our approach requires up to **40x fewer training tokens** per model compared to training from scratch; this results in **compute cost savings of 1.8x** for training the full model family (15B, 8B, and 4B). Minitron models exhibit up to a 16% improvement in MMLU scores compared to training from scratch, perform comparably to other community models such as Mistral 7B, Gemma 7B and Llama-3 8B, and outperform state-of-the-art compression techniques from the literature. Please refer to our [arXiv paper](https://arxiv.org/abs/2407.14679) for more details.
 
 ## Hugging Face Checkpoints, Model Cards and Usage
 
@@ -30,8 +30,8 @@ Please see:
 
 1. [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base).
 2. [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base).
-3. [Nemotron-4-Minitron-8B-Base](https://huggingface.co/nvidia/Nemotron-4-Minitron-8B-Base).
-4. [Nemotron-4-Minitron-4B-Base](https://huggingface.co/nvidia/Nemotron-4-Minitron-4B-Base).
+3. [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base).
+4. [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base).
 
 ## Usage
 
@@ -39,11 +39,11 @@ Please see:
 
 Please refer to the instructions in the respective model cards above.
 
-**Quantized Versions:** The 🤗 Hugging Face community has already created FP8 quantized versions of Nemotron-4-Minitron models. Give them a try here: [Nemotron-4-Minitron-8B-Base-FP8](https://huggingface.co/mgoin/Minitron-8B-Base-FP8) and [Nemotron-4-Minitron-4B-Base-FP8](https://huggingface.co/mgoin/Minitron-4B-Base-FP8).
+**Quantized Versions:** The 🤗 Hugging Face community has already created FP8 quantized versions of Minitron models. Give them a try here: [Minitron-8B-Base-FP8](https://huggingface.co/mgoin/Minitron-8B-Base-FP8) and [Minitron-4B-Base-FP8](https://huggingface.co/mgoin/Minitron-4B-Base-FP8).
 
 ### TRT-LLM
 
-The following steps provide an example of how to load the Nemotron-4-Minitron-8B model in the `.nemo` checkpoint format. You can download the corresponding `.nemo` checkpoints here: [Nemotron-4-Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base/tree/main/nemo) and [Nemotron-4-Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base/tree/main/nemo).
+The following steps provide an example of how to load the Minitron-8B model in the `.nemo` checkpoint format. You can download the corresponding `.nemo` checkpoints here: [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base/tree/main/nemo) and [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base/tree/main/nemo).
 
 1. Export TensorRT-LLM checkpoint.
 
@@ -107,7 +107,7 @@ The following steps provide an example of how to load the Nemotron-4-Minitron-8B
     ```
 
 ### Fine-tuning with LMFlow
-[LMFlow](https://github.com/OptimalScale/LMFlow) is a complete pipeline for fine-tuning large language models. The following steps provide an example of how to fine-tune the ``Nemotron-4-Minitron-8B-Base`` models using LMFlow with the `alpaca` dataset.
+[LMFlow](https://github.com/OptimalScale/LMFlow) is a complete pipeline for fine-tuning large language models. The following steps provide an example of how to fine-tune the ``Minitron-8B-Base`` models using LMFlow with the `alpaca` dataset.
 
 1. Install LMFlow
 
@@ -127,11 +127,11 @@ The following steps provide an example of how to load the Nemotron-4-Minitron-8B
 
 3. Fine-tune the model
   
-      Fine-tune the Nemotron-4-Minitron-8B model on the Wikitext-103 dataset using the following command.
+      Fine-tune the Minitron-8B model on the Wikitext-103 dataset using the following command.
     
       ```bash
       bash ./scripts/run_finetune.sh \
-        --model_name_or_path nvidia/Nemotron-4-Minitron-8B-Base \
+        --model_name_or_path nvidia/Minitron-8B-Base \
         --dataset_path data/alpaca/train_conversation \
         --output_model_path output_models/finetuned_minitron
       ```
