@@ -13,7 +13,8 @@ Minitron is a family of small language models (SLMs) obtained via pruning and kn
 
 ## News
 
-1. New blog post on Llama-3.1 models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/).
+1. New [Technical report](https://research.nvidia.com/publication/_llm-pruning-and-distillation-practice-minitron-approach) and blog post: [Mistral-NeMo-Minitron 8B Foundation Model Delivers Unparalleled Accuracy](https://developer.nvidia.com/blog/mistral-nemo-minitron-8b-foundation-model-delivers-unparalleled-accuracy/)
+2. New blog post on Llama-3.1 models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/).
 
 ## Minitron Model Performance
 
@@ -28,10 +29,11 @@ Deriving the Minitron 8B and 4B models from the base Nemotron-4 15B model using 
 
 Please see:
 
-1. [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base).
-2. [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base).
-3. [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base).
-4. [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base).
+1. [Mistral-NeMo-Minitron-8B-Base](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base)
+2. [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base).
+3. [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base).
+4. [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base).
+5. [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base).
 
 ## Usage
 
