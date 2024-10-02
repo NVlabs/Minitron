@@ -29,11 +29,11 @@ Deriving the Minitron 8B and 4B models from the base Nemotron-4 15B model using 
 
 Please see:
 
-1. [Mistral-NeMo-Minitron-8B-Base](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base)
+1. [Mistral-NeMo-Minitron-8B-Base](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base) / [Instruct](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Instruct).
 2. [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base).
 3. [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base).
 4. [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base).
-5. [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base).
+5. [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base) / [Instruct](https://huggingface.co/nvidia/Nemotron-Mini-4B-Instruct).
 
 ## Usage
 
