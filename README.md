@@ -43,6 +43,14 @@ Please refer to the instructions in the respective model cards above.
 
 **Quantized Versions:** The 🤗 Hugging Face community has already created FP8 quantized versions of Minitron models. Give them a try here: [Minitron-8B-Base-FP8](https://huggingface.co/mgoin/Minitron-8B-Base-FP8) and [Minitron-4B-Base-FP8](https://huggingface.co/mgoin/Minitron-4B-Base-FP8).
 
+## NeMo support
+
+1. [Depth pruning](https://docs.nvidia.com/nemo-framework/user-guide/latest/model-optimization/pruning/depth-pruning.html) support.
+2. Width pruning (coming soon!)
+3. [Distillation](https://docs.nvidia.com/nemo-framework/user-guide/latest/model-optimization/distillation/distillation.html) support.
+
+Find notebook examples [here](https://github.com/NVIDIA/NeMo/tree/main/tutorials/llm/llama-3/pruning-distillation).
+
 ### TRT-LLM
 
 The following steps provide an example of how to load the Minitron-8B model in the `.nemo` checkpoint format. You can download the corresponding `.nemo` checkpoints here: [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base/tree/main/nemo) and [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base/tree/main/nemo).
