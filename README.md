@@ -43,7 +43,7 @@ Please refer to the instructions in the respective model cards above.
 
 **Quantized Versions:** The 🤗 Hugging Face community has already created FP8 quantized versions of Minitron models. Give them a try here: [Minitron-8B-Base-FP8](https://huggingface.co/mgoin/Minitron-8B-Base-FP8) and [Minitron-4B-Base-FP8](https://huggingface.co/mgoin/Minitron-4B-Base-FP8).
 
-## NeMo support
+### NeMo support
 
 1. [Depth pruning](https://docs.nvidia.com/nemo-framework/user-guide/latest/model-optimization/pruning/depth-pruning.html) support.
 2. Width pruning (coming soon!)
