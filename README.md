@@ -46,10 +46,10 @@ Please refer to the instructions in the respective model cards above.
 ### NeMo support
 
 1. [Depth pruning](https://docs.nvidia.com/nemo-framework/user-guide/latest/model-optimization/pruning/depth-pruning.html) support.
-2. Width pruning (coming soon!)
+2. Width pruning
 3. [Distillation](https://docs.nvidia.com/nemo-framework/user-guide/latest/model-optimization/distillation/distillation.html) support.
 
-Find notebook examples [here](https://github.com/NVIDIA/NeMo/tree/main/tutorials/llm/llama-3/pruning-distillation).
+Find notebook examples [here](https://github.com/NVIDIA/NeMo/tree/main/tutorials/llm/llama-3/pruning-distillation) for performing teacher correction, width/depth pruning and distillation.
 
 ### TRT-LLM
 
