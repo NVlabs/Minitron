@@ -15,8 +15,8 @@ Minitron is a family of small language models (SLMs) obtained via pruning and kn
 
 1. Applied Minitron-SSM to create SoTA Nemotron Nano v2 9B reasoning model, outperforming Qwen3 8B on benchmarks while being 3-6x faster on reasoning workloads. [[Techical report](https://arxiv.org/pdf/2508.14444)]
 2. Minitron-SSM: Extend Minitron methodology to compress SSM layers such Mamba2 layers in hybrid LLMs. Accepted to [NeurIPS 2025](https://arxiv.org/pdf/2504.11409).  
-3. 🔥🔥 SOTA 8B model via pruning and distillation with only 400B tokens! See our tech report [Technical report](https://arxiv.org/abs/2408.11796) and blog post: [Mistral-NeMo-Minitron 8B Foundation Model Delivers Unparalleled Accuracy](https://developer.nvidia.com/blog/mistral-nemo-minitron-8b-foundation-model-delivers-unparalleled-accuracy/)
-4.The best LLaMa-3.1 4B model is out! New blog post on Llama-3.1-Minitron-4B models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/).
+3. 🔥🔥 SOTA 8B model via pruning and distillation with only 400B tokens! See our tech report [Technical report](https://arxiv.org/abs/2408.11796) and blog post: [Mistral-NeMo-Minitron 8B Foundation Model Delivers Unparalleled Accuracy](https://developer.nvidia.com/blog/mistral-nemo-minitron-8b-foundation-model-delivers-unparalleled-accuracy/).
+4. The best LLaMa-3.1 4B model is out! New blog post on Llama-3.1-Minitron-4B models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/).
 
 ## Minitron Model Performance
 
