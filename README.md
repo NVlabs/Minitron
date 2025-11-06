@@ -13,8 +13,10 @@ Minitron is a family of small language models (SLMs) obtained via pruning and kn
 
 ## News
 
-1. 🔥🔥🔥 SOTA 8B model via pruning and distillation with only 400B tokens! See our tech report [Technical report](https://arxiv.org/abs/2408.11796) and blog post: [Mistral-NeMo-Minitron 8B Foundation Model Delivers Unparalleled Accuracy](https://developer.nvidia.com/blog/mistral-nemo-minitron-8b-foundation-model-delivers-unparalleled-accuracy/)
-2. The best LLaMa-3.1 4B model is out! New blog post on Llama-3.1-Minitron-4B models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/).
+1. Applied Minitron-SSM to create SoTA Nemotron Nano v2 9B reasoning model, outperforming Qwen3 8B on benchmarks while being 3-6x faster on reasoning workloads. [[Techical report](https://arxiv.org/pdf/2508.14444)]
+2. Minitron-SSM: Extend Minitron methodology to compress SSM layers such Mamba2 layers in hybrid LLMs. Accepted to [NeurIPS 2025](https://arxiv.org/pdf/2504.11409).  
+3. 🔥🔥 SOTA 8B model via pruning and distillation with only 400B tokens! See our tech report [Technical report](https://arxiv.org/abs/2408.11796) and blog post: [Mistral-NeMo-Minitron 8B Foundation Model Delivers Unparalleled Accuracy](https://developer.nvidia.com/blog/mistral-nemo-minitron-8b-foundation-model-delivers-unparalleled-accuracy/)
+4.The best LLaMa-3.1 4B model is out! New blog post on Llama-3.1-Minitron-4B models: [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/).
 
 ## Minitron Model Performance
 
@@ -29,11 +31,13 @@ Deriving the Minitron 8B and 4B models from the base Nemotron-4 15B model using 
 
 Please see:
 
-1. [Mistral-NeMo-Minitron-8B-Base](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base) / [Instruct](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Instruct).
-2. [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base).
-3. [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base).
-4. [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base).
-5. [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base) / [Instruct](https://huggingface.co/nvidia/Nemotron-Mini-4B-Instruct).
+1. [NVIDIA-Nemotron-Nano-9B-v2-Reasoning](https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2) and [NVIDIA-Nemotron-Nano-9B-v2-Base](https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2-Base).
+2. [Nemotron-H-4B-Instruct-128K](https://huggingface.co/nvidia/Nemotron-H-4B-Instruct-128K) and [Nemotron-H-4B-Base-8k](https://huggingface.co/nvidia/Nemotron-H-4B-Base-8K).
+3. [Mistral-NeMo-Minitron-8B-Base](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base) / [Instruct](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Instruct).
+4. [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base).
+5. [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base).
+6. [Minitron-8B-Base](https://huggingface.co/nvidia/Minitron-8B-Base).
+7. [Minitron-4B-Base](https://huggingface.co/nvidia/Minitron-4B-Base) / [Instruct](https://huggingface.co/nvidia/Nemotron-Mini-4B-Instruct).
 
 ## Usage
 
